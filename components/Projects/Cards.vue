@@ -161,8 +161,8 @@ const projects = [
     textLink: 'My github (not the project)',
     images: [
       'secretproject/logo_secretproject.png',
-      'https://raw.githubusercontent.com/max13h/portfolio-2024/master/public/secretproject/sign_in_screen.png',
-      'https://raw.githubusercontent.com/max13h/portfolio-2024/master/public/secretproject/database_schema.png',
+      'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/secretproject/sign_in_screen.png',
+      'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/secretproject/database_schema.png',
     ],
   },
   {
@@ -231,13 +231,13 @@ const projects = [
     link: 'https://github.com/max13h/the_favorite',
     textLink: 'Check the repo',
     images: [
-      "https://raw.githubusercontent.com/max13h/the_favorite/master/app/assets/images/readme/logo.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/master/app/assets/images/readme/root.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/master/app/assets/images/readme/home_tasks.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/master/app/assets/images/readme/home_events.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/master/app/assets/images/readme/competition.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/master/app/assets/images/readme/common_pot.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/master/app/assets/images/readme/kids.png",
+      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/logo.png",
+      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/root.png",
+      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/home_tasks.png",
+      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/home_events.png",
+      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/competition.png",
+      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/common_pot.png",
+      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/kids.png",
     ],
   },
   {
@@ -266,9 +266,9 @@ const projects = [
     link: 'https://github.com/max13h/minesweeper',
     textLink: 'Check the repo',
     images: [
-      'https://raw.githubusercontent.com/max13h/minesweeper/master/img/minesweeper_menu.png',
-      'https://raw.githubusercontent.com/max13h/minesweeper/master/img/minesweeper_win.png',
-      'https://raw.githubusercontent.com/max13h/minesweeper/master/img/minesweeper_loose.png'
+      'https://raw.githubusercontent.com/max13h/minesweeper/main/img/minesweeper_menu.png',
+      'https://raw.githubusercontent.com/max13h/minesweeper/main/img/minesweeper_win.png',
+      'https://raw.githubusercontent.com/max13h/minesweeper/main/img/minesweeper_loose.png'
     ],
   },
   {
@@ -314,8 +314,8 @@ const projects = [
     textLink: 'Check the repo',
     images: [
       'portfolio/portfolio-max13h.png',
-      'https://raw.githubusercontent.com/max13h/portfolio-2024/master/public/portfolio/proficiency.png',
-      'https://raw.githubusercontent.com/max13h/portfolio-2024/master/public/portfolio/projects.png'
+      'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/portfolio/proficiency.png',
+      'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/portfolio/projects.png'
     ],
   }
 ]
