@@ -18,6 +18,7 @@ const gsapStore = useGsapStore()
 
 onMounted(() => {
   useLenis()
+
 })
 </script>
 
