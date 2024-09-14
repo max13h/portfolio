@@ -161,14 +161,14 @@ const projects = [
     textLink: 'My github (not the project)',
     images: [
       'secretproject/logo_secretproject.png',
-      'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/secretproject/sign_in_screen.png',
-      'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/secretproject/database_schema.png',
+      'secretproject/sign_in_screen.png',
+      'secretproject/database_schema.png',
     ],
   },
   {
     name: 'The Favorite',
     date: 'September 2023 - October 2023',
-    mainImage: 'https://raw.githubusercontent.com/max13h/the_favorite/8ad4723678a48ee37cd25e482f971d550fd8986e/app/assets/images/crown.svg',
+    mainImage: 'the_favorite/crown.svg',
     description: "The Favorite offers a humorous take on the burden of parenthood. Parents work as a real team, while having fun competing against each other. \nIt was a great first project to work on. I took the lead of our team of three over a one-month period, dedicating a significant amount of time to its success. We brought some excellent ideas and are really proud of the accomplished work. \nParticipating in this project during my bootcamp provided the opportunity to work in a full team project early in my career, contributing to a better understanding of the collaborative approach required for development projects.",
     stack: [
       {
@@ -231,19 +231,19 @@ const projects = [
     link: 'https://github.com/max13h/the_favorite',
     textLink: 'Check the repo',
     images: [
-      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/logo.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/root.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/home_tasks.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/home_events.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/competition.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/common_pot.png",
-      "https://raw.githubusercontent.com/max13h/the_favorite/main/app/assets/images/readme/kids.png",
+      "the_favorite/logo.png",
+      "the_favorite/root.png",
+      "the_favorite/home_tasks.png",
+      "the_favorite/home_events.png",
+      "the_favorite/competition.png",
+      "the_favorite/common_pot.png",
+      "the_favorite/kids.png",
     ],
   },
   {
     name: 'Minesweeper',
     date: 'June 2023',
-    mainImage: 'https://raw.githubusercontent.com/max13h/minesweeper/9da7fb7e96a788566079582b7473c44b161b3e91/img/flag.svg',
+    mainImage: 'minesweeper/flag.svg',
     description: "A simple exercise assigned by my bootcamp, built in plain Javascript, HTML, and CSS. I love the Minesweeper so I aimed to create the best version possible. Here is the result.",
     stack: [
       {
@@ -266,9 +266,9 @@ const projects = [
     link: 'https://github.com/max13h/minesweeper',
     textLink: 'Check the repo',
     images: [
-      'https://raw.githubusercontent.com/max13h/minesweeper/main/img/minesweeper_menu.png',
-      'https://raw.githubusercontent.com/max13h/minesweeper/main/img/minesweeper_win.png',
-      'https://raw.githubusercontent.com/max13h/minesweeper/main/img/minesweeper_loose.png'
+      'minesweeper/minesweeper_menu.png',
+      'minesweeper/minesweeper_win.png',
+      'minesweeper/minesweeper_loose.png'
     ],
   },
   {
