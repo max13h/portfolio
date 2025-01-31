@@ -1,135 +1,136 @@
 <template>
   <header id="welcome" class="t-welcome relative h-screen flex justify-center items-center">
     <h1 class="text-big1 flex flex-col items-center leading-[1.5]">
-      <span :ref="letters[0]">Hello, I'm </span>
-      <span class="t-max13h relative flex flex-col items-center leading-[0.9]">
-        <span :ref="letters[1]">Maxime</span>
-        <span :ref="letters[2]">Hmae</span>
+      <span :ref="letterRefs[0]">Hello, I'm </span>
+      <span class="name-container relative flex flex-col items-center leading-[0.9]">
+        <span :ref="letterRefs[1]">Maxime</span>
+        <span :ref="letterRefs[2]">Hmae</span>
       </span>
     </h1>
     <div class="t-scrolldown absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center">
       <p>Scroll down !</p>
-      <Icon name="fluent:arrow-circle-down-12-filled" size="2rem" class="text-dark"  />
+      <Icon name="fluent:arrow-circle-down-12-filled" size="2rem" class="text-dark" />
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-import { gsap } from "gsap"
-import { CustomEase } from "gsap/CustomEase"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { gsap } from 'gsap';
+import { CustomEase } from 'gsap/CustomEase';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const letters = [ref(), ref(), ref()]
-const gsapStore = useGsapStore()
-const lenisStore = useLenisStore()
+const gsapStore = useGsapStore();
+const lenisStore = useLenisStore();
 
-onMounted(() => {
-  letters.map((el) => {
-    splitLettersInHTML(el, 't-helloimmax13h-letters')
-  })
+const letterRefs = [ref(), ref(), ref()];
 
-  gsap.registerPlugin(CustomEase)
-  gsap.registerPlugin(ScrollTrigger)
+const letterAnimation = {
+  exitTimeline: {
+    duration: 1,
+    ease: 'power4.in',
+    yPercent: -200,
+    opacity: 0,
+  },
+  entranceTimeline: {
+    duration: 1,
+    stagger: 0.05,
+    ease: CustomEase.create('custom', 'M0,0 C0.169,0.85 0.054,1.025 1,1'),
+  },
+  rotation: {
+    first: {
+      duration: 0.1,
+      delay: 0.3,
+      stagger: 0.06,
+    },
+    second: {
+      duration: 0.5,
+      delay: 0.6,
+      stagger: 0.06,
+    },
+  },
+};
 
+const calculateExitXPercent = (index: number): number => {
+  if (index < 9) {
+    return -500 + (index * (1000 / 8));
+  }
+  return -200 + ((index - 9) * (400 / 5));
+};
 
-  gsap.timeline({
+const getRandomRotation = (min: number, max: number): number => {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+
+const setupExitAnimation = () => {
+  return gsap.timeline({
     scrollTrigger: {
       trigger: '.t-welcome',
       start: 'bottom 90%',
       end: 'bottom 90%',
       toggleActions: 'play none reverse none',
-    }
-  })
-  .to('.t-helloimmax13h-letters', {
-    duration: 1,
-    ease: "power4.in",
-    yPercent: -200,
-    xPercent: (index) => {
-      const obj: any = {}
-      for (let i = 0; i < 9; i++) {
-        const value = -500 + (i * (1000 / 8));
-        obj[i] = value;
-      }
-      for (let i = 0; i < 7; i++) {
-        const value = -200 + (i * (400 / 5));
-        obj[i + 9] = value;
-      }
-      return obj[index]
     },
-    opacity: 0,
-  }, 0)
-  .to('.t-scrolldown', {
-    duration: 1,
-    ease: "power4.in",
-    yPercent: -100,
-    opacity: 0,
-  }, 0)
+  })
+    .to('#welcome .letter', {
+      ...letterAnimation.exitTimeline,
+      xPercent: calculateExitXPercent,
+    }, 0)
+    .to('.t-scrolldown', {
+      duration: 1,
+      ease: 'power4.in',
+      yPercent: -100,
+      opacity: 0,
+    }, 0);
+};
 
+const setupEntranceAnimation = () => {
+  return gsap.timeline({ autoRemoveChildren: true, delay: 2.5 })
+    .from('#welcome .letter', {
+      xPercent: 5000,
+      ...letterAnimation.entranceTimeline,
+    })
+    .to('#welcome .letter', {
+      ...letterAnimation.rotation.first,
+      rotate: () => `-${getRandomRotation(10, 30)}`,
+    }, '<')
+    .to('#welcome .letter', {
+      ...letterAnimation.rotation.second,
+      rotate: () => `${getRandomRotation(-8, 8)}`,
+    }, '<')
+    .to('#welcome .name-container', { overflow: 'hidden' })
+    .to('html', { '--display-max13h': 'block' }, '<')
+    .to('html', { duration: 0.4, '--bottom-max13h': -50 }, '<')
+    .to('#welcome .name-container', { 
+      duration: 0.1, 
+      fontFamily: 'farnhamtext-regularlfregular',
+    })
+    .to('html', {
+      duration: 0.4,
+      '--bottom-max13h': 100,
+      onComplete: () => {
+        gsapStore.isWelcomed = true;
+        lenisStore.lenis.start();
+      }
+    }, '<')
+    .to('html', { '--display-max13h': 'none', overflow: 'visible' })
+    .to('#welcome .name-container', { overflow: 'visible' }, '<')
+    .from('.t-scrolldown', { duration: 1, opacity: 0 }, '<')
+    .from('nav', { duration: 2, opacity: 0 }, '<');
+};
 
-  gsap.timeline({
-    autoRemoveChildren: true,
-    delay: 2.5
-  })
-  .from('.t-helloimmax13h-letters', {
-    xPercent: 5000,
-    duration: 1,
-    stagger: 0.05,
-    ease: CustomEase.create("custom", "M0,0 C0.169,0.85 0.054,1.025 1,1 "),
-  })
-  .to('.t-helloimmax13h-letters', {
-    rotate: () => `-${Math.floor(Math.random() * 20  + 10)}`,
-    duration: 0.1,
-    delay: 0.3,
-    stagger: 0.06,
-  }, '<')
-  .to('.t-helloimmax13h-letters', {
-    rotate: () => `${Math.floor(Math.random() * 16 - 8)}`,
-    duration: 0.5,
-    delay: 0.6,
-    stagger: 0.06,
-  }, '<')
-  .to('.t-max13h', {
-    overflow: 'hidden'
-  })
-  .to('html', {
-    '--display-max13h': 'block'
-  }, '<')
-  .to('html', {
-    duration: 0.4,
-    '--bottom-max13h': -50
-  }, '<')
-  .to('.t-max13h', {
-    duration: 0.1,
-    fontFamily: 'farnhamtext-regularlfregular',
-  })
-  .to('html', {
-    duration: 0.4,
-    '--bottom-max13h': 100,
-    onComplete: () => {
-      gsapStore.isWelcomed = true
-      lenisStore.lenis.start()
-    }
-  }, '<')
-  .to('html', {
-    '--display-max13h': 'none',
-    overflow: 'visible'
-  })
-  .to('.t-max13h', {
-    overflow: 'visible'
-  }, '<')
-  .from('.t-scrolldown', {
-    duration: 1,
-    opacity: 0
-  }, '<')
-  .from('nav', {
-    duration: 2,
-    opacity: 0,
-  }, '<')
-})
+onMounted(() => {
+  letterRefs.forEach(el => {
+    splitLettersInHTML(el, 'letter');
+  });
+
+  gsap.registerPlugin(CustomEase, ScrollTrigger);
+
+  setupExitAnimation();
+  setupEntranceAnimation();
+});
 </script>
 
 <style scoped>
-.t-max13h::after {
+#welcome .name-container::after {
   content: '';
   position: absolute;
   bottom: var(--bottom-max13h);
@@ -139,7 +140,6 @@ onMounted(() => {
   border-radius: 100%;
   width: calc(10rem + 50vw);
   height: calc(7rem + 50vw);
-  @apply bg-light
+  @apply bg-light;
 }
-
 </style>
