@@ -74,7 +74,7 @@ const setupExitAnimation = () => {
       ...letterAnimation.exitTimeline,
       xPercent: calculateExitXPercent,
     }, 0)
-    .to('.t-scrolldown', {
+    .to('#welcome div', {
       duration: 1,
       ease: 'power4.in',
       yPercent: -100,
@@ -113,7 +113,7 @@ const setupEntranceAnimation = () => {
     }, '<')
     .to('html', { '--display-max13h': 'none', overflow: 'visible' })
     .to('#welcome .name-container', { overflow: 'visible' }, '<')
-    .from('.t-scrolldown', { duration: 1, opacity: 0 }, '<')
+    .from('#welcome div', { duration: 1, opacity: 0 }, '<')
     .from('nav', { duration: 2, opacity: 0 }, '<');
 };
 
