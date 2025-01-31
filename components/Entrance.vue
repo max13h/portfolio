@@ -1,43 +1,43 @@
 <template>
-  <div class="absolute top-0 left-0 z-[500] w-full h-full">
-    <div class="w-full h-full fixed top-0 left-0 z-[501]">
-      <div class="w-full h-full flex">
-        <div v-for="index in 10" :key="index" class="entrance-line w-[10%] h-full bg-dark"></div>
+  <div id="entrance" v-if="isEntering" class="absolute inset-0 z-[500]">
+    <div class="fixed inset-0 z-[501] flex flex-col">
+      <div class="flex w-full h-full">
+        <div 
+          v-for="index in 10" 
+          :key="index" 
+          class="line w-[10%] h-full bg-dark">
+        </div>
       </div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+
+      <div class="absolute inset-0 flex items-center justify-center">
         <p class="text-xl font-light overflow-hidden">
-          <span class="t-portfoliomax13h text-light text-sm font-light inline-block text-center">Portfolio - {{ new Date().getFullYear() }}</span>
+          <span class="text text-light text-sm font-light inline-block text-center">
+            Portfolio - {{ currentYear }}
+          </span>
         </p>
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup lang="ts">
-import { gsap } from "gsap"
+import { gsap } from "gsap";
+import { computed, onMounted } from "vue";
 
-const gsapStore = useGsapStore()
+const isEntering = ref(true)
+const currentYear = computed(() => new Date().getFullYear());
 
 onMounted(() => {
   gsap.timeline({
-    onComplete: () => { gsapStore.isEntrance = false },
-    autoRemoveChildren: true
+    onComplete: () => { isEntering.value = false; },
+    autoRemoveChildren: true,
   })
-  .from('.t-portfoliomax13h', {
-    duration: 0.5,
-  })
-  .to('.t-portfoliomax13h', {
-    opacity: 0,
-    duration: 0.5,
-  }, 1)
-  .to('.entrance-line', {
+  .from("#entrance .text", { duration: 0.5 })
+  .to("#entrance .text", { opacity: 0, duration: 0.5 }, 1)
+  .to("#entrance .line", {
     stagger: 0.1,
     xPercent: (index) => -100 * index - 200,
-    duration: 0.5
-  }, '-=0.1')
-})
+    duration: 0.5,
+  }, "-=0.1");
+});
 </script>
-
-<style scoped>
-</style>
