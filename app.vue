@@ -1,12 +1,10 @@
 <template>
   <main class="relative overflow-x-hidden" :class="{ 'overflow-hidden': !gsapStore.isWelcomed }">
-    <Entrance v-if="gsapStore.isEntrance" />
+    <Entrance />
     <Navbar />
     <Welcome />
-    <section>
-      <AboutMeTextPart />
-      <AboutMeStackPart />
-    </section>
+    <About />
+    <Stack />
     <Projects />
     <Contact />
     <Footer />
@@ -18,7 +16,6 @@ const gsapStore = useGsapStore()
 
 onMounted(() => {
   useLenis()
-
 })
 </script>
 

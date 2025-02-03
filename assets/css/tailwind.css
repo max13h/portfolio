@@ -81,7 +81,7 @@ body {
 
 .divider-block-screen {
   @apply
-    h-[50vh]
+    h-[40vh]
 }
 .divider-block-lg {
   @apply

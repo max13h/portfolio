@@ -1,6 +1,5 @@
 @layer base {
 * {
-  scrollbar-width: none;
   scrollbar-color: #D6D6E5 #F7F6F9;
   }
   *::-webkit-scrollbar {
