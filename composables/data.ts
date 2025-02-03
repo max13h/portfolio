@@ -160,7 +160,7 @@ export const dataProjects = (): Project[] => [
   {
       name: 'Early stage project',
       date: 'November 2023 - now',
-      mainImage: 'secretproject/logo_secretproject.png',
+      mainImage: 'secretproject/logo.png',
       description: "Due to its early stage and the absence of a legally registered name, I am hesitant to share extensive information at this time. The project aspires to evolve into a Software as a Service (SaaS) platform. \nI began working on it in November 2023 and have recently completed the initial steps of my Minimum Viable Product (MVP). This project helped me discover the less glamorous aspects of the job, such as operational components and project architecture. \nWhile I acknowledge there are certain issues and imperfections, I am currently focused on building, learning, and presenting the project to potential future collaborators.",
       stack: [
         {
@@ -215,9 +215,9 @@ export const dataProjects = (): Project[] => [
       link: 'https://github.com/max13h/',
       textLink: 'My github (not the project)',
       images: [
-        'secretproject/logo_secretproject.png',
-        'secretproject/sign_in_screen.png',
-        'secretproject/database_schema.png',
+        'secretproject/logo.png',
+        'secretproject/sign_in.png',
+        'secretproject/db.png',
       ],
     },
     {
@@ -286,13 +286,11 @@ export const dataProjects = (): Project[] => [
       link: 'https://github.com/max13h/the_favorite',
       textLink: 'Check the repo',
       images: [
-        "the_favorite/logo.png",
         "the_favorite/root.png",
-        "the_favorite/home_tasks.png",
-        "the_favorite/home_events.png",
         "the_favorite/competition.png",
+        "the_favorite/events.png",
         "the_favorite/common_pot.png",
-        "the_favorite/kids.png",
+        "the_favorite/crown.svg",
       ],
     },
     {
@@ -321,15 +319,15 @@ export const dataProjects = (): Project[] => [
       link: 'https://max13h.github.io/minesweeper',
       textLink: 'Play the game',
       images: [
-        'minesweeper/minesweeper_menu.png',
-        'minesweeper/minesweeper_win.png',
-        'minesweeper/minesweeper_loose.png'
+        'minesweeper/menu.png',
+        'minesweeper/win.png',
+        'minesweeper/loose.png'
       ],
     },
     {
       name: 'Portfolio',
       date: 'February 2024',
-      mainImage: 'portfolio/portfolio-max13h.png',
+      mainImage: 'portfolio/main.png',
       description: "This is the website you are currently on. \nI aimed for my portfolio to be creative, incorporating animations, transitions, and showcasing my proficiency in CSS and Javascript on a global aspects. I learned a lot about multi browser support and responsive design. \nIt took me nearly two weeks to complete it entirely, and I am proud to say that I love the result.",
       stack: [
         {
@@ -368,9 +366,7 @@ export const dataProjects = (): Project[] => [
       link: 'https://github.com/max13h/portfolio-2024',
       textLink: 'Check the repo',
       images: [
-        'portfolio/portfolio-max13h.png',
-        'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/portfolio/proficiency.png',
-        'https://raw.githubusercontent.com/max13h/portfolio-2024/main/public/portfolio/projects.png'
+        'portfolio/main.png',
       ],
     }
   ]

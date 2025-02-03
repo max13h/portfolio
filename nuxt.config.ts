@@ -37,5 +37,22 @@ export default defineNuxtConfig({
       'lg':	1024,
       'xl':	1280
     }
+  },
+  nitro: {
+    prerender: {
+      routes: [
+        '/_ipx/_/citiz-website/website.png',
+        '/_ipx/_/citiz-website/before.png',
+        '/_ipx/_/minesweeper/loose.png',
+        '/_ipx/_/minesweeper/win.png',
+        '/_ipx/_/minesweeper/menu.png',
+        '/_ipx/_/secretproject/sign_in.png',
+        '/_ipx/_/secretproject/db.png',
+        '/_ipx/_/the_favorite/common_pot.png',
+        '/_ipx/_/the_favorite/competition.png',
+        '/_ipx/_/the_favorite/events.png',
+        '/_ipx/_/the_favorite/root.png',
+      ]
+    }
   }
 })
