@@ -1,4 +1,4 @@
-<img src="./public/portfolio/portfolio-max13h.png"  />
+<img src="./public/portfolio/main.png"  />
 
 # Portfolio max13h
 
