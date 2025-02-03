@@ -1,6 +1,7 @@
 @layer base {
 * {
   scrollbar-color: #D6D6E5 #F7F6F9;
+  scrollbar-width: thin;
   }
   *::-webkit-scrollbar {
     height: 0px;
