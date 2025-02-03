@@ -1,7 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  - push
+  push:
+    branches:
+      - main
+  workflow_dispatch: # This allows you to trigger the workflow manually
 
 jobs:
   install:
