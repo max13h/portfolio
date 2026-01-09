@@ -1,30 +1,69 @@
-img {
-  image-rendering: pixelated;
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-red: #fb2c36;
+
+  --color-orange: #ff6900;
+
+  --color-yellow: #efb100;
+
+  --color-green: #00c951;
+
+  --color-blue: #2b7fff;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a1a1a1;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+
+  /* Colors */
+  --color-primary: var(--color-black);
+  --color-secondary: var(--color-neutral-700);
+
+  --color-positive: var(--color-green);
+  --color-negative: var(--color-red);
+  --color-info: var(--color-blue);
+  --color-warning: var(--color-yellow);
+
+  --text-color: var(--color-black);
+  --text-color-dark: var(--color-white);
+
+
 }
 
-.container {
-  width: 100vh;
-  height: 100vh;
+#root {
   position: relative;
-  overflow: hidden;
+}
+
+nav {
   display: flex;
-  justify-content: center;
-  align-items: end;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(4px);
+  font-size: 1.5rem;
+
 }
 
-.image-me {
-  width: 100vh;
-  object-fit: contain;
-  position: absolute;
-  transform: translate(0, 20%);
-}
+.btn {
+  padding: 0.2rem 0.75rem 0.2rem 0.75rem;
+  border-radius: 1rem;
+  transition: 0.4s;
 
-.image-impact {
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  width: 50vh;
-
-  z-index: 1000;
+  &:hover {
+    opacity: 0.6;
+  }
 }

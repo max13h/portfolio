@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  & .bodyContainer {
+    width: 100vh;
+    height: 100vh;
+  }
+}

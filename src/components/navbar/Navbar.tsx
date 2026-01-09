@@ -1,11 +1,23 @@
 export default function Navbar() {
   return (
     <>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem laboriosam modi! Ab alias dicta
-        facilis iste non? Incidunt, ipsa, minus! Consequuntur optio possimus quae quam quibusdam recusandae
-        reprehenderit, rerum.
-      </div>
+      <nav>
+        <div>
+          <a
+            href="/"
+            className="btn"
+          >
+            test
+          </a>
+        </div>
+        <a
+          className="btn"
+          href="mailto:contact@hmae.fr"
+          target="_blank"
+        >
+          Contact
+        </a>
+      </nav>
     </>
   )
 }
