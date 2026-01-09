@@ -8,6 +8,19 @@
     "types": ["vite/client"],
     "skipLibCheck": true,
 
+    /* Path mapping for editor & TypeScript */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@": ["src"],
+      "#/*": ["types/*"],
+      "#": ["types"],
+      "~/*": ["tests/*"],
+      "~": ["tests"],
+      "&/*": ["constants/*"],
+      "&": ["constants"]
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
