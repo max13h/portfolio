@@ -1,3 +1,13 @@
-.container {
-  background-color: red;
+.languageSwitcher button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.languageSwitcher button:hover {
+  background-color: #777;
 }

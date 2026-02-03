@@ -1,7 +1,10 @@
+import css from './navbar.module.css'
+import LangSelector from '@/components/langSelector/LangSelector.tsx'
+
 export default function Navbar() {
   return (
     <>
-      <nav>
+      <nav className={css.navbar}>
         <div>
           <a
             href="/"
@@ -10,6 +13,7 @@ export default function Navbar() {
             test
           </a>
         </div>
+        <LangSelector />
         <a
           className="btn"
           href="mailto:contact@hmae.fr"

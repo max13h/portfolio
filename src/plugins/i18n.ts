@@ -4,14 +4,23 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import translationEN from '../../public/locales/en/translation.json'
 import translationFR from '../../public/locales/fr/translation.json'
 
-export const availableLanguages = {
+export type AvailableLanguage = {
+  translation: Record<string, unknown>
+  flag: string
+  label: string
+}
+export type AvailableLanguages = Record<string, AvailableLanguage>
+
+export const availableLanguages: AvailableLanguages = {
   en: {
     translation: translationEN,
     flag: '🇬🇧',
+    label: 'English',
   },
   fr: {
     translation: translationFR,
     flag: '🇫🇷',
+    label: 'Français',
   },
 }
 
