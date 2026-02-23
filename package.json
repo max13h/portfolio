@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@astrojs/vue": "catalog:",
+    "@max13h/i18n": "workspace:*",
+    "@max13h/ui": "workspace:*",
     "astro": "catalog:",
     "astro-icon": "catalog:",
     "vue": "catalog:"
@@ -21,7 +23,6 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@max13h/tooling": "workspace:*",
-    "@max13h/ui": "workspace:*",
     "eslint": "^10.0.0",
     "husky": "^9.1.7",
     "prettier": "^3.8.1",

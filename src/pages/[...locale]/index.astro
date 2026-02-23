@@ -1,14 +1,64 @@
 ---
-import Layout from "../../layouts/Layout.astro"
 import { t, getLocaleFromUrl } from "../../i18n/translations"
+import BaseLayout from "@max13h/ui/layouts/BaseLayout.astro"
+import faviconUrl from "@max13h/ui/assets/favicon.svg"
+import { getCollection, render } from "astro:content"
 
-export function getStaticPaths() {
-  return [{ params: { locale: "fr" } }, { params: { locale: "en" } }]
+export async function getStaticPaths() {
+  const [meFr, meEn] = await Promise.all([
+    getCollection("me_fr"),
+    getCollection("me_en"),
+  ])
+
+  return [
+    { params: { locale: "fr" }, props: { entry: meFr[0] } },
+    { params: { locale: "en" }, props: { entry: meEn[0] } },
+  ]
 }
 
+const { entry } = Astro.props
+const { Content } = await render(entry)
 const locale = getLocaleFromUrl(Astro.url)
+const title = t(locale, "layout.title")
 ---
 
-<Layout>
-  <h1>{t(locale, "welcome")}</h1>
-</Layout>
+<BaseLayout title={title} faviconUrl={faviconUrl.src}>
+  <main>
+    <h1>{entry.data.title}</h1>
+    <div class="content">
+      <Content />
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    width: clamp(256px, 100vw, 900px);
+    padding: 4rem 0 6rem 0;
+
+    & h1 {
+      font-size: 4rem;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & :global(p) {
+      font-size: 1.25rem;
+      white-space: break-spaces;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    main {
+      padding: 2rem 1rem 6rem 1rem;
+    }
+  }
+</style>

@@ -2,5 +2,8 @@
   "welcome": "Welcome to my portfolio!",
   "layout": {
     "title": "Maxime Hmae's portfolio"
+  },
+  "profile": {
+    "heading": "About me"
   }
 }

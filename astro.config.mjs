@@ -24,4 +24,12 @@ export default defineConfig({
       redirectToDefaultLocale: false,
     },
   },
+  vite: {
+    server: {
+      watch: {
+        // Watch workspace packages for hot reload
+        ignored: ["!**/node_modules/@max13h/**"],
+      },
+    },
+  },
 })
