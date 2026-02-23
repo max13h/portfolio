@@ -1,0 +1,1 @@
+pnpm astro check && pnpm format && pnpm lint
