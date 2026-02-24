@@ -3,6 +3,7 @@ import { t, getLocaleFromUrl } from "../../i18n/translations"
 import BaseLayout from "@max13h/ui/layouts/BaseLayout.astro"
 import faviconUrl from "@max13h/ui/assets/favicon.svg"
 import { getCollection, render } from "astro:content"
+import UINavbar from "@max13h/ui/components/UINavbar.astro"
 
 export async function getStaticPaths() {
   const [meFr, meEn] = await Promise.all([
@@ -22,11 +23,20 @@ const locale = getLocaleFromUrl(Astro.url)
 const title = t(locale, "layout.title")
 ---
 
-<BaseLayout title={title} faviconUrl={faviconUrl.src}>
+<BaseLayout
+  center={true}
+  showNavbar={false}
+  title={title}
+  faviconUrl={faviconUrl.src}
+>
   <main>
     <h1>{entry.data.title}</h1>
     <div class="content">
       <Content />
+      <UINavbar
+        homeLink={false}
+        relatedLinks={[{ title: "Blog", link: "https://blog.hmae.fr/" }]}
+      />
     </div>
   </main>
 </BaseLayout>
@@ -38,7 +48,6 @@ const title = t(locale, "layout.title")
     align-items: start;
     gap: 1rem;
     width: clamp(256px, 100vw, 900px);
-    padding: 4rem 0 6rem 0;
 
     & h1 {
       font-size: 4rem;
