@@ -19,10 +19,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout monorepo
+      - name: Checkout monorepo workspace (packages + root config only)
         uses: actions/checkout@v5
         with:
           repository: max13h/max13h
+          sparse-checkout: packages
+
+      - name: Checkout portfolio app into workspace path
+        uses: actions/checkout@v5
+        with:
+          path: apps/portfolio
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
