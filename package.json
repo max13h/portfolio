@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "pre-commit": "pnpm astro check && pnpm format && pnpm lint",
     "prepare": "husky",
-    "release": "pnpm version <arg> && git add package.json && git commit -m \"chore(release): <arg>\" && git push"
+    "release": "pnpm version $npm_config_version && git add package.json && git commit -m \"chore(release): $npm_config_version\" && git push"
   },
   "dependencies": {
     "@astrojs/vue": "^7.0.0",
