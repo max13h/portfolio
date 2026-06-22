@@ -10,7 +10,8 @@
     "lint": "eslint . --ext .js,.ts,.astro,.vue,.md",
     "format": "prettier --write .",
     "pre-commit": "pnpm astro check && pnpm format && pnpm lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "pnpm version <arg> && git add package.json && git commit -m \"chore(release): <arg>\" && git push"
   },
   "dependencies": {
     "@astrojs/vue": "^7.0.0",
