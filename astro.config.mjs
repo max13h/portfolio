@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [
     vue(),
     icon({
-      iconDir: resolve(__dirname, "../../packages/ui/src/assets/icons"),
+      iconDir: resolve(__dirname, "node_modules/@max13h/ui/src/assets/icons"),
     }),
   ],
   i18n: {
