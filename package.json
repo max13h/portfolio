@@ -13,20 +13,20 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/vue": "catalog:",
-    "@max13h/i18n": "workspace:*",
-    "@max13h/ui": "workspace:*",
-    "astro": "catalog:",
-    "astro-icon": "catalog:",
-    "vue": "catalog:"
+    "@astrojs/vue": "^7.0.0",
+    "@max13h/i18n": "0.3.0",
+    "@max13h/ui": "0.3.0",
+    "astro": "^7.0.0",
+    "astro-icon": "^1.1.5",
+    "vue": "^3.5.38"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
-    "@max13h/tooling": "workspace:*",
-    "eslint": "^10.4.0",
+    "@max13h/tooling": "0.3.0",
+    "eslint": "^10.5.0",
     "husky": "^9.1.7",
-    "prettier": "^3.8.3",
-    "typescript": "^5.9.3"
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@10.30.2+sha512.36cdc707e7b7940a988c9c1ecf88d084f8514b5c3f085f53a2e244c2921d3b2545bc20dd4ebe1fc245feec463bb298aecea7a63ed1f7680b877dc6379d8d0cb4"
 }
