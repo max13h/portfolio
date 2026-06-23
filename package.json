@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "pre-commit": "pnpm astro check && pnpm format && pnpm lint",
     "prepare": "husky",
-    "release": "pnpm version $npm_config_version && git push origin main --tags"
+    "release": "./scripts/release.sh"
   },
   "dependencies": {
     "@astrojs/vue": "^7.0.0",
