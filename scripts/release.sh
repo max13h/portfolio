@@ -22,4 +22,4 @@ VERSION=$(node -p "require('./package.json').version")
 git add package.json
 git commit -m "chore(release): $VERSION"
 git tag "$VERSION"
-git push origin main --follow-tags
+git push origin main --tags
