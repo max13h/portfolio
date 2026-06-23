@@ -1,0 +1,5 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - "@max13h/ui@0.6.1"
