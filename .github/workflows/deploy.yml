@@ -33,8 +33,11 @@ jobs:
           node-version: 22
           cache: "pnpm"
 
+      - name: Authenticate GitHub Packages
+        run: pnpm config set "//npm.pkg.github.com/:_authToken" "${{ secrets.NPM_TOKEN }}"
+
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build portfolio
         run: pnpm build

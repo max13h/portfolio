@@ -20,6 +20,6 @@ pnpm version --no-git-tag-version "$BUMP"
 VERSION=$(node -p "require('./package.json').version")
 
 git add package.json
-git commit -m "chore(release): $VERSION"
+git commit --no-verify -m "chore(release): $VERSION"
 git tag "$VERSION"
 git push origin main $VERSION
